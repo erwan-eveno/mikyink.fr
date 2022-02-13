@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap&family=Source+Sans+Pro:wght@300;400&family=Nunito');
+
+.flexcenter{
+  @apply flex justify-center items-center
+}
+
+@media (min-width: 768px ) {
+  .centerCalc {
+    width: calc(100% - 100px);
+  }
+}
+
+@media (max-width: 767px ) {
+  .centerCalc {
+    width: 100%;
+  }
+}
+
+.btnMobile {
+  opacity: .9;
+
+  span {
+    display: block;
+    background: #0A0E11;
+    height: 6px;
+    width: 60%;
+    opacity: .9;
+    position: relative;
+
+    &:after{
+      content:"";
+      position: absolute;
+      height: 6px;
+      width: 80%;
+      top: -15px;
+      background: #0A0E11;
+    }
+
+    &:before{
+      content:"";
+      position: absolute;
+      height: 6px;
+      width: 60%;
+      top: 15px;
+      background: #0A0E11;
+    }
+  }
+}
