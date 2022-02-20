@@ -16,8 +16,8 @@ function App() {
                     <img src="piercingHero.png" alt="" className="absolute top-[35%] -right-20"/>
                 </div>
             </div>
-        </div>
         <HeroMobile />
+        </div>
 
           <div className="h-[400px] bg-red-600">
 
