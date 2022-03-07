@@ -1,12 +1,22 @@
-export default function HeroNavbar (){
+import {gsap} from "gsap/dist/gsap";
+
+export default function HeroNavbar (props){
+    const links = ['home', 'services', 'artbook', 'contact']
+
+    const scrollTo = (x) =>{
+        console.log(x)
+        gsap.to(window, {
+            duration: .5,
+            scrollTo: `#${x}`
+        })
+    }
     return (
         <>
-            <div className="absolute md:right-[50px] lg:right-[100px] top-[50px] hidden md:block md:w-[600px] lg:w-[700px] 2xl:right-[150px] 2x:w-[800px]">
+            <div className="absolute md:right-[50px] lg:right-[100px] top-[50px] hidden md:block md:w-[600px] lg:w-[700px] 2xl:right-[150px] 2x:w-[800px] z-50">
                 <ul className="flex w-full justify-between text-white">
-                    <li className="text-[30px] tracking-wider font-light font-roboto uppercase">HOME</li>
-                    <li className="text-[30px] tracking-wider font-light font-roboto uppercase">SERVICES</li>
-                    <li className="text-[30px] tracking-wider font-light font-roboto uppercase">ARTBOOK</li>
-                    <li className="text-[30px] tracking-wider font-light font-roboto uppercase">CONTACT</li>
+                    {links.map((x, key)=>{
+                        return <li className="text-[30px] tracking-wider font-light font-roboto uppercase" onMouseEnter={props.linkEnter} onMouseLeave={props.linkLeave} onClick={()=>scrollTo(x)} key={key}>{x}</li>
+                    })}
                 </ul>
             </div>
         </>

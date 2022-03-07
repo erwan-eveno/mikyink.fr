@@ -1,13 +1,21 @@
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFacebookF, faInstagram} from "@fortawesome/free-brands-svg-icons";
-import {useEffect, useState} from "react";
+import { useState} from "react";
+import {gsap} from "gsap/dist/gsap"
 
 export default function HeroMobile () {
     const [isOpen, setIsOpen] = useState(false)
 
     const openNav = async () => {
+        gsap.to("#mobileNav", {
+            x: isOpen ? 0 : '-100%',
+            duration: .5,
+            ease: 'power1'
+        })
+        gsap.to('body', {
+            overflow: isOpen ? 'visible' : 'hidden'
+        })
         setIsOpen(!isOpen)
-        console.log(isOpen)
     }
 
     return (
@@ -27,7 +35,7 @@ export default function HeroMobile () {
                 </div>
             </div>
 
-            <div className="w-full h-screen bg-gradient-to-b from-primary to-primaryGradient md:hidden absolute top-0 left-0 flex items-center flex-col">
+            <div className="w-full h-screen bg-gradient-to-b from-primary to-primaryGradient md:hidden fixed top-0 left-full flex items-center flex-col z-40" id="mobileNav">
                 <div className="absolute top-10">
                     <img src="./icon.png" alt="" />
                 </div>

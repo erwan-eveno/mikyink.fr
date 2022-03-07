@@ -4,21 +4,65 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap&family=Source+Sans+Pro:wght@300;400&family=Nunito');
 
+$primary: #0A0E11;
+$primaryGradient: #131619;
+$customWhite: #FAF9F5;
+
+body{
+  cursor:none;
+}
+
 .flexcenter{
   @apply flex justify-center items-center
 }
 
-@media (min-width: 768px ) {
-  .centerCalc {
-    width: calc(100% - 100px);
+.sectionTitle{
+  @apply text-3xl lg:text-[35px] font-roboto text-customWhite tracking-wide flex items-center relative ml-[60px];
+
+  @media (min-width: 1024px ) {
+    &:after{
+      content: '';
+      position: absolute;
+      height: 5px;
+      width: 50px;
+      background: $customWhite;
+      left:-80px;
+    }
+  }
+
+  @media (max-width: 1023px ) {
+    &:after{
+      content: '';
+      position: absolute;
+      height: 4px;
+      width: 35px;
+      background: $customWhite;
+      left:-60px;
+    }
   }
 }
 
-@media (max-width: 767px ) {
-  .centerCalc {
-    width: 100%;
-  }
+.descOverflow {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
+
+.activeServ{
+    content: '';
+    background: rgba(250, 249, 245, .2);
+    height: 100%;
+    width: 0;
+    display: block;
+    position: absolute;
+    top: 0;
+}
+
+.servPadding{
+  padding: 10px 3px;
+}
+
 
 .btnMobile {
   opacity: .9;
@@ -31,22 +75,105 @@
     opacity: .9;
     position: relative;
 
-    &:after{
+    &:after, &:before {
       content:"";
       position: absolute;
       height: 6px;
-      width: 80%;
-      top: -15px;
       background: #0A0E11;
     }
 
-    &:before{
-      content:"";
-      position: absolute;
-      height: 6px;
+    &:after {
+      width: 80%;
+      top: -15px;
+    }
+
+    &:before {
       width: 60%;
       top: 15px;
-      background: #0A0E11;
     }
+  }
+}
+
+.linearBg {
+  background: linear-gradient($primary, $primaryGradient);
+}
+
+.imgTattoo{
+  background: url('../public/tattoo.jpg') no-repeat center / cover;
+}
+
+.imgPiercing{
+  background: url('../public/pierc.jpg') no-repeat center / cover;
+}
+
+.imgDesign{
+  background: url('../public/design.jpg') no-repeat center / cover;
+}
+
+.artbookGrid {
+  display: grid;
+  @media (min-width: 1024px) {
+    grid-template: 'a b b c d'
+                   'a f g g d'
+                   'e f h i i';
+
+    .a{ grid-area: a; }
+    .b{ grid-area: b; }
+    .c{ grid-area: c; }
+    .d{ grid-area: d; }
+    .e{ grid-area: e; }
+    .f{ grid-area: f; }
+    .g{ grid-area: g; }
+    .h{ grid-area: h; }
+    .i{ grid-area: i; }
+  }
+
+}
+
+
+
+@media (min-width: 768px ) {
+  .centerCalc {
+    width: calc(100% - 100px);
+  }
+
+  @media (max-width: 1023px) {
+    .artbookGrid {
+      grid-template: 'a b c'
+                     'a g g'
+                     'i i h';
+
+      .a{ grid-area: a; }
+      .b{ grid-area: b; }
+      .c{ grid-area: c; }
+      .d{ display: none }
+      .e{ display: none }
+      .f{ display: none }
+      .g{ grid-area: g; }
+      .h{ grid-area: h; }
+      .i{ grid-area: i; }
+    }
+  }
+}
+
+@media (max-width: 767px ) {
+  .centerCalc {
+    width: 100%;
+  }
+
+  .artbookGrid {
+    grid-template: 'a c'
+                   'a d'
+                   'h d';
+
+    .a{ grid-area: a; }
+    .b{ display: none; }
+    .c{ grid-area: c; }
+    .d{ grid-area: d; }
+    .e{ display: none }
+    .f{ display: none }
+    .g{ display: none; }
+    .h{ grid-area: h; }
+    .i{ display: none; }
   }
 }
