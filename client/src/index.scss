@@ -17,7 +17,7 @@ body{
 }
 
 .sectionTitle{
-  @apply text-3xl lg:text-[35px] font-roboto text-customWhite tracking-wide flex items-center relative ml-[60px];
+  @apply ml-[60px] lg:text-[35px] text-3xl font-roboto text-customWhite tracking-wide flex items-center relative;
 
   @media (min-width: 1024px ) {
     &:after{
