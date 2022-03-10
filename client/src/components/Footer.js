@@ -26,8 +26,9 @@ export default function Footer (props){
                 <div>
                     <h1 className="text-xl">horaires</h1>
                     <ul className="font-light mt-6">
-                        <li className="mt-3 text-lg w-[90%]">Lun / Dim: fermé</li>
+                        <li className="mt-3 text-lg w-[90%]">Lun: fermé</li>
                         <li className="mt-3 text-lg w-[90%]">Mar / Sam: 09h - 18h</li>
+                        <li className="mt-3 text-lg w-[90%]">Dim: fermé</li>
                     </ul>
                 </div>
                 <div className="hidden sm:block">

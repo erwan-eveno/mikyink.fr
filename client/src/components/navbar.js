@@ -10,10 +10,18 @@ export default function Navbar (props){
                 </div>
                 <div className="flex justify-center flex-col">
                     <ul className="h-[35%] lg:h-[25%] flex flex-col justify-between">
-                        <li onClick={(e)=>props.sectionSwipe(e, "home")} className="navBtns bg-white w-5 h-5 rotate-45 rounded" />
-                        <li onClick={(e)=>props.sectionSwipe(e, "services")} className="navBtns bg-white w-5 h-5 rounded-xl opacity-40" />
-                        <li onClick={(e)=>props.sectionSwipe(e, "artbook")} className="navBtns bg-white w-5 h-5 rounded-xl opacity-40" />
-                        <li onClick={(e)=>props.sectionSwipe(e, "contact")} className="navBtns bg-white w-5 h-5 rounded-xl opacity-40" />
+                        <li onClick={(e)=>props.sectionSwipe("home")} className="p-2">
+                            <div id="homeNav" className="navBtns bg-white w-5 h-5 rotate-45 rounded" />
+                        </li>
+                        <li onClick={(e)=>props.sectionSwipe("services")} className="p-2">
+                            <div id="servicesNav" className="navBtns bg-white w-5 h-5 rounded-xl opacity-40" />
+                        </li>
+                        <li onClick={(e)=>props.sectionSwipe("artbook")} className="p-2">
+                            <div id="artbookNav" className="navBtns bg-white w-5 h-5 rounded-xl opacity-40" />
+                        </li>
+                        <li onClick={(e)=>props.sectionSwipe("contact")} className="p-2">
+                            <div id="contactNav" className="navBtns bg-white w-5 h-5 rounded-xl opacity-40" />
+                        </li>
                     </ul>
                 </div>
                 <div className="absolute bottom-[7%] h-[15%] lg:h-[10%] flex flex-col justify-between">

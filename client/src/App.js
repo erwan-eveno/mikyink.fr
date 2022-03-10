@@ -87,9 +87,9 @@ function App() {
         })
     }
 
-    const sectionSwipe = (e, tab) => {
+    const sectionSwipe = (tab) => {
         gsap.to(`.navBtns`, {rotation: 0, opacity: .4, borderRadius: 10, duration: .5})
-        gsap.to(e.target, {rotation: 45, opacity: 1, borderRadius: 2, duration: .5})
+        gsap.to(`#${tab}Nav`, {rotation: 45, opacity: 1, borderRadius: 2, duration: .5})
         gsap.to(window, {duration: .5, scrollTo: `#${tab}`});
     }
 
