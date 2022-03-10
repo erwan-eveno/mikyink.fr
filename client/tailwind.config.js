@@ -12,7 +12,7 @@ module.exports = {
       },
       fontFamily: {
         'roboto': ['Roboto Slab', 'serif'],
-        'sourceSans': ['Source Sans Pro', 'sans-serif'],
+        'josefin': ['Josefin Sans', 'sans-serif'],
         'nunitoSans': ['Nunito', 'sans-serif'],
       }
     },

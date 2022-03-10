@@ -125,17 +125,17 @@ export default function Services (props) {
                     <div className="h-[100px] md:h-[150px] lg:h-[200px]">
                         {services.map((x, k)=>{
                             return <div id={x.idText} className="absolute opacity-0" key={k}>
-                                <h1 className="uppercase font-sourceSans text-3xl lg:text-4xl xl:text-5xl text-customWhite mt-6 lg:mt-6 xl:mt-10">{x.name}</h1>
-                                <p className="font-sourceSans font-light text-customWhite w-[80%] xl:w-[60%] text-xl xl:text-[25px] mt-3 lg:mt-5 h-full descOverflow">{x.desc}</p>
+                                <h1 className="uppercase font-josefin text-3xl lg:text-4xl xl:text-5xl text-customWhite mt-6 lg:mt-6 xl:mt-10">{x.name}</h1>
+                                <p className="font-josefin font-light text-customWhite w-[80%] xl:w-[60%] text-xl xl:text-[25px] mt-3 lg:mt-5 h-full descOverflow">{x.desc}</p>
                             </div>
                         })}
                     </div>
-                    <div className="border-2 border-customWhite flexcenter w-full h-12 lg:h-14 font-sourceSans text-customWhite text-xl lg:text-[25px] font-medium mt-24 md:mt-4 xl:mt-12" onMouseEnter={props.enterHover} onMouseLeave={props.leaveHover} onClick={test}>En savoir plus</div>
+                    <div className="border-2 border-customWhite flexcenter w-full h-12 lg:h-14 font-josefin text-customWhite text-xl lg:text-[25px] font-medium mt-24 md:mt-4 xl:mt-12" onMouseEnter={props.enterHover} onMouseLeave={props.leaveHover} onClick={test}>En savoir plus</div>
                 </div>
                 <div className="absolute right-[25%] hidden xl:block">
                     <ul className="text-right">
                         {services.map((x, k)=>{
-                            return <li key={k} onClick={()=>selectCarou(x.time)} onMouseEnter={props.smallHover} onMouseLeave={props.smallLeave} className="text-customWhite uppercase font-sourceSans relative servPadding mt-1"><div id={x.name +'Btn'} className="activeServ will-change-transform" />{x.name}</li>
+                            return <li key={k} onClick={()=>selectCarou(x.time)} onMouseEnter={props.smallHover} onMouseLeave={props.smallLeave} className="text-customWhite uppercase font-josefin relative servPadding mt-1"><div id={x.name +'Btn'} className="activeServ will-change-transform" />{x.name}</li>
                         })}
                     </ul>
                 </div>

@@ -15,12 +15,25 @@ function App() {
         gsap.registerPlugin(ScrollToPlugin)
         gsap.registerPlugin(ScrollTrigger)
 
-        /*gsap.to(".abcd", {
-          scrollTrigger: {
-            trigger: "#artbook"
-            //start: "test"+ab()
-          }
-        })*/
+        ScrollTrigger.create({
+            trigger: '#home',
+            onEnter: ()=>console.log('home'),
+            endTrigger: '#services'
+        })
+        ScrollTrigger.create({
+            trigger: '#services',
+            onEnter: ()=>console.log('services'),
+            endTrigger: '#artbook'
+        })
+        ScrollTrigger.create({
+            trigger: '#artbook',
+            onEnter: ()=>console.log('artbook'),
+            endTrigger: '#contact'
+        })
+        ScrollTrigger.create({
+            trigger: '#contact',
+            onEnter: ()=>console.log('contact'),
+        })
     }, [])
 
     let cusorSize = 60
@@ -100,7 +113,7 @@ function App() {
 
                 <Artbook enterHover={cursorHover} leaveHover={leaveHover} />
 
-                <Footer />
+                <Footer smallHover={smallHover} smallLeave={smallLeave} />
             </div>
         </div>
     )

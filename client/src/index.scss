@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap&family=Source+Sans+Pro:wght@300;400&family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap&family=Josefin+Sans:wght@300;400&display=swap&family=Nunito');
 
 $primary: #0A0E11;
 $primaryGradient: #131619;
 $customWhite: #FAF9F5;
 
 body{
-  cursor:none;
+  //cursor:none;
 }
 
 .flexcenter{

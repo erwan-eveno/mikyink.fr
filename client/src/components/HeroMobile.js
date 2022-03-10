@@ -31,7 +31,7 @@ export default function HeroMobile () {
                     <img src="icon.png" className="self-center" alt="" />
                     <h1 className="text-customWhite font-roboto text-[60px] mt-5 font-light ">MikyInk</h1>
                     <span className="h-[2px] w-full bg-customWhite block mt-5" />
-                    <h2 className="mt-5 text-customWhite font-sourceSans text-[25px] tracking-wider">Tattoo • Piercing</h2>
+                    <h2 className="mt-5 text-customWhite font-josefin text-[25px] tracking-wider">Tattoo • Piercing</h2>
                 </div>
             </div>
 

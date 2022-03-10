@@ -11,7 +11,7 @@ export default function Artbook (props) {
                     <div className="hidden sm:flex w-[35%] md:w-[30%] lg:w-[20%] justify-center">
                         <div className="inline-flex" onMouseEnter={props.enterHover} onMouseLeave={props.leaveHover}>
                             <img src="eye.png" className="self-center w-auto h-[20px] xl:h-auto" alt=""/>
-                            <h2 className="ml-3 xl:ml-5 text-customWhite text-[20px] xl:text-[25px] font-sourceSans">Voir plus</h2>
+                            <h2 className="ml-3 xl:ml-5 text-customWhite text-[20px] xl:text-[25px] font-josefin">Voir plus</h2>
                         </div>
                     </div>
                 </div>
@@ -23,7 +23,7 @@ export default function Artbook (props) {
                 <div className="flexcenter h-[15%] sm:hidden w-full h-24">
                     <div className="inline-flex border border-customWhite pl-7 pr-7 pt-3 pb-3" onMouseEnter={props.enterHover} onMouseLeave={props.leaveHover}>
                         <img src="eye.png" className="self-center w-auto h-[17px]" alt=""/>
-                        <h2 className="ml-3 text-customWhite text-[20px] font-sourceSans">Voir plus</h2>
+                        <h2 className="ml-3 text-customWhite text-[20px] font-josefin">Voir plus</h2>
                     </div>
                 </div>
             </div>
