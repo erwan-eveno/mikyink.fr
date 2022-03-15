@@ -42,7 +42,7 @@ function App() {
     }
 
     const sectionSwipe = (tab) => {
-        if(cancelScrollBtns) clearTimeout(scrollTime)
+        if(cancelScrollBtns) return
         cancelScrollBtns = true
         gsap.to(`.navBtns`, {rotation: 0, opacity: .4, borderRadius: 10, duration: .5})
         gsap.to(`#${tab}Nav`, {rotation: 45, opacity: 1, borderRadius: 2, duration: .5})
