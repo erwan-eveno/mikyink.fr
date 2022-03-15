@@ -5,7 +5,7 @@ export default function Navbar (props){
     return (
         <div onMouseEnter={props.enter} onMouseLeave={props.leave}>
             <div className="hidden z-50 md:flex justify-center linearBg md:h-screen md:w-[100px] fixed shadow-navShadow">
-                <div className="absolute top-7">
+                <div className="absolute top-7" onClick={()=>window.location.reload()}>
                     <img src="./icon.png" alt="" />
                 </div>
                 <div className="flex justify-center flex-col">
@@ -25,8 +25,12 @@ export default function Navbar (props){
                     </ul>
                 </div>
                 <div className="absolute bottom-[7%] h-[15%] lg:h-[10%] flex flex-col justify-between">
-                    <FontAwesomeIcon icon={faFacebookF} className="text-white text-[30px]" />
-                    <FontAwesomeIcon icon={faInstagram} className="text-white text-[30px]" />
+                    <a href="https://www.facebook.com/Mikyink.tatouage/" target="_blank" className="flexcenter">
+                        <FontAwesomeIcon icon={faFacebookF} className="text-white text-[30px]" />
+                    </a>
+                    <a href="https://www.instagram.com/miky_ink_/" target="_blank" className="flexcenter">
+                        <FontAwesomeIcon icon={faInstagram} className="text-white text-[30px]" />
+                    </a>
                 </div>
             </div>
         </div>

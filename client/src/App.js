@@ -1,5 +1,5 @@
 /* COMPONENTS */
-import {useEffect} from "react";
+import {useEffect, useRef} from "react";
 import Navbar from './components/navbar'
 import HeroNavbar from "./components/HeroNavbar";
 import HeroMobile from "./components/HeroMobile";
@@ -9,32 +9,48 @@ import {ScrollTrigger} from "gsap/ScrollTrigger";
 import Services from "./components/Services";
 import Artbook from "./components/Artbook";
 import Footer from "./components/Footer"
+import {isVisible} from "@testing-library/user-event/dist/utils";
+import {clear} from "@testing-library/user-event/dist/clear";
 
 function App() {
+    let cancelScrollBtns = false
     useEffect(() => {
         gsap.registerPlugin(ScrollToPlugin)
-        gsap.registerPlugin(ScrollTrigger)
+        window.addEventListener('scroll', scrollHandler)
 
-        ScrollTrigger.create({
-            trigger: '#home',
-            onEnter: ()=>console.log('home'),
-            endTrigger: '#services'
-        })
-        ScrollTrigger.create({
-            trigger: '#services',
-            onEnter: ()=>console.log('services'),
-            endTrigger: '#artbook'
-        })
-        ScrollTrigger.create({
-            trigger: '#artbook',
-            onEnter: ()=>console.log('artbook'),
-            endTrigger: '#contact'
-        })
-        ScrollTrigger.create({
-            trigger: '#contact',
-            onEnter: ()=>console.log('contact'),
-        })
+        return () => window.removeEventListener('scroll', scrollHandler)
     }, [])
+
+    const scrollHandler = () =>{
+        if(cancelScrollBtns) return
+
+        let sections = ['home', 'services', 'artbook', 'contact']
+        let now = 'home'
+        sections.map(x => {
+            const el = document.querySelector(`#${x}`).getBoundingClientRect()
+            let isVisible = (el.top < window.innerHeight) && (el.bottom >= 0)
+            if(isVisible) now = x
+        })
+
+        sections.map(x=>{
+            if(x == now){
+                gsap.to(`#${now}Nav`, {rotation: 45, opacity: 1, borderRadius: 2, duration: .5})
+            }else{
+                gsap.to(`#${x}Nav`, {rotation: 0, opacity: .4, borderRadius: 10, duration: .5})
+            }
+        })
+    }
+
+    const sectionSwipe = (tab) => {
+        if(cancelScrollBtns) clearTimeout(scrollTime)
+        cancelScrollBtns = true
+        gsap.to(`.navBtns`, {rotation: 0, opacity: .4, borderRadius: 10, duration: .5})
+        gsap.to(`#${tab}Nav`, {rotation: 45, opacity: 1, borderRadius: 2, duration: .5})
+        gsap.to(window, {duration: .5, scrollTo: `#${tab}`});
+        const scrollTime = setTimeout(()=>{
+            cancelScrollBtns = false
+        }, 1000)
+    }
 
     let cusorSize = 60
 
@@ -87,12 +103,6 @@ function App() {
         })
     }
 
-    const sectionSwipe = (tab) => {
-        gsap.to(`.navBtns`, {rotation: 0, opacity: .4, borderRadius: 10, duration: .5})
-        gsap.to(`#${tab}Nav`, {rotation: 45, opacity: 1, borderRadius: 2, duration: .5})
-        gsap.to(window, {duration: .5, scrollTo: `#${tab}`});
-    }
-
     return (
         <div onMouseMove={moveCursor} className="select-none">
             <div id="cursor" className="fixed rounded-[30px] block w-[60px] h-[60px] border-white border-[1px] z-[100] pointer-events-none"/>
@@ -113,7 +123,7 @@ function App() {
 
                 <Artbook enterHover={cursorHover} leaveHover={leaveHover} />
 
-                <Footer smallHover={smallHover} smallLeave={smallLeave} />
+                <Footer smallHover={smallHover} smallLeave={smallLeave} navScroll={sectionSwipe} />
             </div>
         </div>
     )

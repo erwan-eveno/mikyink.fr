@@ -18,6 +18,14 @@ export default function HeroMobile () {
         setIsOpen(!isOpen)
     }
 
+    const linkHandler = (tab) =>{
+        openNav()
+        gsap.to(window, {
+            scrollTo: `#${tab}`,
+            duration: .5
+        })
+    }
+
     return (
         <>
             <div className="md:hidden relative z-50" onClick={openNav}>
@@ -41,15 +49,19 @@ export default function HeroMobile () {
                 </div>
                 <div className="flexcenter h-full w-full">
                     <ul className="text-customWhite font-roboto text-[20px] items-center flex-col flex h-[30%] justify-between">
-                        <li>HOME</li>
-                        <li>SERVICES</li>
-                        <li>ARTBOOK</li>
-                        <li>CONTACT</li>
+                        <li onClick={()=>linkHandler('home')}>HOME</li>
+                        <li onClick={()=>linkHandler('services')}>SERVICES</li>
+                        <li onClick={()=>linkHandler('artbook')}>ARTBOOK</li>
+                        <li onClick={()=>linkHandler('contact')}>CONTACT</li>
                     </ul>
                 </div>
                 <div className="absolute bottom-10 flex w-[20%] justify-between">
-                    <FontAwesomeIcon icon={faFacebookF} className="text-white text-[30px]" />
-                    <FontAwesomeIcon icon={faInstagram} className="text-white text-[30px]" />
+                    <a href="https://www.facebook.com/Mikyink.tatouage/" target="_blank" className="flexcenter">
+                        <FontAwesomeIcon icon={faFacebookF} className="text-white text-[30px]" />
+                    </a>
+                    <a href="https://www.instagram.com/miky_ink_/" target="_blank" className="flexcenter">
+                        <FontAwesomeIcon icon={faInstagram} className="text-white text-[30px]" />
+                    </a>
                 </div>
             </div>
         </>
