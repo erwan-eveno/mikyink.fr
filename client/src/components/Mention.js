@@ -96,7 +96,7 @@ export default function Mentions (){
             <div className="w-[80%] ml-[10%] mt-14 text-customWhite pb-32">
                 <h2 className="font-josefin text-xl font-medium">Edition du site internet</h2>
                 <br /><br />
-                Le site Mikyink.fr (ci-après « le Site »), accessible à l’adresse https://mikyink.fr est édité par la société Mikyink (ci-après « l’Editeur »), SAS au capital de 5000 euros, dont le siège social est situé Le Lab’o 1 avenue du Champ de Mars 45074 Orléans Cedex 2 (02 38 69 82 88, contact@noubliejamais.fr).
+                Le site Mikyink.fr (ci-après « le Site »), accessible à l’adresse https://mikyink.fr est édité par la société Mikyink (ci-après « l’Editeur »), SAS au capital de 5000 euros, dont le siège social est situé xxxxxx (num, contact@mikyink.fr).
                 <br /><br />
                 <br /><br />
 
