@@ -1,16 +1,13 @@
 /* COMPONENTS */
-import {useEffect, useRef} from "react";
+import {useEffect} from "react";
 import Navbar from './components/navbar'
 import HeroNavbar from "./components/HeroNavbar";
 import HeroMobile from "./components/HeroMobile";
 import {gsap} from "gsap/dist/gsap";
 import {ScrollToPlugin} from "gsap/dist/ScrollToPlugin"
-import {ScrollTrigger} from "gsap/ScrollTrigger";
 import Services from "./components/Services";
 import Artbook from "./components/Artbook";
 import Footer from "./components/Footer"
-import {isVisible} from "@testing-library/user-event/dist/utils";
-import {clear} from "@testing-library/user-event/dist/clear";
 
 function App() {
     let cancelScrollBtns = false
@@ -110,7 +107,7 @@ function App() {
             <div className="absolute left-0 md:left-[100px] md:top-0 overflow-hidden centerCalc">
                 <div className="h-screen w-full overflow-hidden bg-center bg-cover bg-no-repeat"
                      style={{backgroundImage: 'url(bgHero.png'}} id="home">
-                    <HeroNavbar linkEnter={cursorHover} linkLeave={leaveHover} />
+                    <HeroNavbar linkEnter={cursorHover} linkLeave={leaveHover} navScroll={sectionSwipe} />
                     <div className="hidden md:block">
                         <div className="flex absolute h-screen w-full items-center">
                             <img src="heroText.png" alt="" className="absolute"/>

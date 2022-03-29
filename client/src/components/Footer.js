@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import {Link} from "react-router-dom";
 
 export default function Footer (props){
     const [formatedDate, setFormatedDate] = useState('')
@@ -45,7 +46,7 @@ export default function Footer (props){
                 <div className="hidden sm:block">
                     <h1 className="text-xl">autre</h1>
                     <ul className="font-light mt-6" onMouseEnter={props.smallHover} onMouseLeave={props.smallLeave}>
-                        <li className="mt-3 text-lg w-[90%]">Mentions légales</li>
+                        <Link to="/mentions-legales"><li className="mt-3 text-lg w-[90%]">Mentions légales</li></Link>
                         <li className="mt-3 text-lg w-[90%]">Politique de confidentialité</li>
                     </ul>
                 </div>

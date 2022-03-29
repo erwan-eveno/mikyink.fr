@@ -5,7 +5,7 @@ export default function Navbar (props){
     return (
         <div onMouseEnter={props.enter} onMouseLeave={props.leave}>
             <div className="hidden z-50 md:flex justify-center linearBg md:h-screen md:w-[100px] fixed shadow-navShadow">
-                <div className="absolute top-7" onClick={()=>window.location.reload()}>
+                <div className="absolute top-7" onClick={()=>props.sectionSwipe('home')}>
                     <img src="./icon.png" alt="" />
                 </div>
                 <div className="flex justify-center flex-col">

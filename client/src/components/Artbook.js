@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 export default function Artbook (props) {
     const imgs = [{name:'a', ext:'jpg'}, {name:'b', ext: 'png'}, {name:'c', ext: 'png'}, {name:'d', ext: 'png'}, {name:'e', ext: 'png'}, {name:'f', ext: 'png'}, {name:'g', ext: 'jpg'}, {name:'h', ext: 'png'}, {name:'i', ext: 'png'}]
 
@@ -9,10 +11,12 @@ export default function Artbook (props) {
                     <h1 className="uppercase w-[60%] sm:w-[35%] md:w-[30%] lg:w-[20%] font-roboto text-[27px] xl:text-[35px] text-customWhite flex justify-center">artbook</h1>
                     <div className="h-0.5 bg-customWhite w-[20%] sm:w-[30%] md:w-[40%] lg:w-[60%]" />
                     <div className="hidden sm:flex w-[35%] md:w-[30%] lg:w-[20%] justify-center">
-                        <div className="inline-flex" onMouseEnter={props.enterHover} onMouseLeave={props.leaveHover}>
-                            <img src="eye.png" className="self-center w-auto h-[20px] xl:h-auto" alt=""/>
-                            <h2 className="ml-3 xl:ml-5 text-customWhite text-[20px] xl:text-[25px] font-josefin">Voir plus</h2>
-                        </div>
+                        <Link to='/showmore'>
+                            <div className="inline-flex" onMouseEnter={props.enterHover} onMouseLeave={props.leaveHover}>
+                                <img src="eye.png" className="self-center w-auto h-[20px] xl:h-auto" alt=""/>
+                                <h2 className="ml-3 xl:ml-5 text-customWhite text-[20px] xl:text-[25px] font-josefin">Voir plus</h2>
+                            </div>
+                        </Link>
                     </div>
                 </div>
                 <div className="w-full h-[60%] sm:h-[70%] artbookGrid">
@@ -21,10 +25,12 @@ export default function Artbook (props) {
                     })}
                 </div>
                 <div className="flexcenter h-[15%] sm:hidden w-full h-24">
-                    <div className="inline-flex border border-customWhite pl-7 pr-7 pt-3 pb-3" onMouseEnter={props.enterHover} onMouseLeave={props.leaveHover}>
-                        <img src="eye.png" className="self-center w-auto h-[17px]" alt=""/>
-                        <h2 className="ml-3 text-customWhite text-[20px] font-josefin">Voir plus</h2>
-                    </div>
+                    <Link to='/showmore'>
+                        <div className="inline-flex border border-customWhite pl-7 pr-7 pt-3 pb-3" onMouseEnter={props.enterHover} onMouseLeave={props.leaveHover}>
+                            <img src="eye.png" className="self-center w-auto h-[17px]" alt=""/>
+                            <h2 className="ml-3 text-customWhite text-[20px] font-josefin">Voir plus</h2>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </div>

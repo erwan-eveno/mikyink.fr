@@ -1,8 +1,10 @@
 import gsap from "gsap/dist/gsap"
 import {useEffect} from "react";
 import {Linear} from "gsap/gsap-core";
+import {Link, useNavigate} from "react-router-dom"
 
 export default function Services (props) {
+    const navigate = useNavigate()
     const animTime = 4
     const animDelay = .7
 
@@ -97,7 +99,7 @@ export default function Services (props) {
         tlTexts.seek(time)
     }
 
-    const test = ()=>{
+    const handleClick = ()=>{
         let t = tlImgs.time()
         let totalAnim = animTime + animDelay
         if(t < totalAnim){
@@ -107,6 +109,8 @@ export default function Services (props) {
         }else if(t > totalAnim * 2){
             console.log('design')
         }
+
+        navigate.to()
     }
 
     return (
@@ -130,7 +134,7 @@ export default function Services (props) {
                             </div>
                         })}
                     </div>
-                    <div className="border-2 border-customWhite flexcenter w-full h-12 lg:h-14 font-josefin text-customWhite text-xl lg:text-[25px] font-medium mt-24 md:mt-4 xl:mt-12" onMouseEnter={props.enterHover} onMouseLeave={props.leaveHover} onClick={test}>En savoir plus</div>
+                    <Link to='/showmore'><div className="border-2 border-customWhite flexcenter w-full h-12 lg:h-14 font-josefin text-customWhite text-xl lg:text-[25px] font-medium mt-24 md:mt-4 xl:mt-12" onMouseEnter={props.enterHover} onMouseLeave={props.leaveHover} onClick={handleClick}>En savoir plus</div></Link>
                 </div>
                 <div className="absolute right-[25%] hidden xl:block">
                     <ul className="text-right">
