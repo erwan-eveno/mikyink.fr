@@ -110,7 +110,7 @@ function App() {
                     <HeroNavbar linkEnter={cursorHover} linkLeave={leaveHover} navScroll={sectionSwipe} />
                     <div className="hidden md:block">
                         <div className="flex absolute h-screen w-full items-center">
-                            <img src="heroText.png" alt="" className="absolute"/>
+                            <img src="heroText.png" alt="" className="absolute w-full"/>
                         </div>
                     </div>
                     <HeroMobile />

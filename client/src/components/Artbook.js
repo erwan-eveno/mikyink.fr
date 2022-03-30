@@ -19,9 +19,9 @@ export default function Artbook (props) {
                         </Link>
                     </div>
                 </div>
-                <div className="w-full h-[60%] sm:h-[70%] artbookGrid">
+                <div className="w-full h-[60%] sm:h-[70%] artbookGrid gap-4">
                     {imgs.map((x, k)=>{
-                        return <div key={k} className={x.name+" flexcenter"}><div className="h-[calc(100%-20px)] w-[calc(100%-20px)] bg-center bg-cover bg-no-repeat" style={{backgroundImage: `url(${x.name}.${x.ext})`}}/></div>
+                        return <div key={k} className={x.name+" flexcenter"}><div className="h-full w-full bg-center bg-cover bg-no-repeat" style={{backgroundImage: `url(${x.name}.${x.ext})`}}/></div>
                     })}
                 </div>
                 <div className="flexcenter h-[15%] sm:hidden w-full h-24">

@@ -47,12 +47,11 @@ export default function Footer (props){
                     <h1 className="text-xl">autre</h1>
                     <ul className="font-light mt-6" onMouseEnter={props.smallHover} onMouseLeave={props.smallLeave}>
                         <Link to="/mentions-legales"><li className="mt-3 text-lg w-[90%]">Mentions légales</li></Link>
-                        <li className="mt-3 text-lg w-[90%]">Politique de confidentialité</li>
                     </ul>
                 </div>
             </div>
             <div className="w-[75%] text-customWhite flex justify-center md:justify-center relative absolute bottom-16 font-josefin font-medium">
-                <h1 onMouseEnter={props.smallHover} onMouseLeave={props.smallLeave} className="absolute md:left-0 tracking-wider text-sm sm:text-lg"><a href="https://erwan-eveno.fr/" target="_blank">© Mikyink.fr | Site développé par Erwan EVENO</a></h1>
+                <h1 onMouseEnter={props.smallHover} onMouseLeave={props.smallLeave} className="absolute md:left-0 tracking-wider text-xs sm:text-lg"><a href="https://erwan-eveno.fr/" target="_blank">© Mikyink.fr | Site développé par Erwan EVENO</a></h1>
                 <h1 className="hidden md:block absolute right-0">{formatedDate}</h1>
             </div>
         </div>
