@@ -89,14 +89,14 @@ export default function Mentions (){
                     </div>
                 </div>
             </div>
-            <div className="w-[40%] mt-14 ml-[10%]">
+            <div className="w-[40%] mt-14 ml-[15%]">
                 <h1 className="text-customWhite font-josefin text-3xl">Mentions légales</h1>
                 <div className="bg-customWhite h-1 mt-3 w-full" />
             </div>
-            <div className="w-[80%] ml-[10%] mt-14 text-customWhite pb-32">
+            <div className="w-[70%] ml-[15%] mt-14 text-customWhite pb-32">
                 <h2 className="font-josefin text-xl font-medium">Edition du site internet</h2>
                 <br /><br />
-                Le site Mikyink.fr (ci-après « le Site »), accessible à l’adresse https://mikyink.fr est édité par la société Mikyink (ci-après « l’Editeur »), SAS au capital de 5000 euros, dont le siège social est situé xxxxxx (num, contact@mikyink.fr).
+                Le site Mikyink.fr (ci-après « le Site »), accessible à l’adresse <a href="https://mikyink.fr" target="_blank" className="text-blue-400" onMouseEnter={smallHover} onMouseLeave={smallLeave}>https://mikyink.fr</a> est édité par la société Mikyink (ci-après « l’Editeur »), Entreprise individuelle, dont le siège social est situé au 1 square pierre magnol, 81580 Soual (06 37 36 84 95, hello@mikyink.fr).
                 <br /><br />
                 <br /><br />
 
