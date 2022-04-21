@@ -14,6 +14,7 @@ module.exports = {
         'roboto': ['Roboto Slab', 'serif'],
         'josefin': ['Josefin Sans', 'sans-serif'],
         'nunitoSans': ['Nunito', 'sans-serif'],
+        'robotoNoSlab': ['Roboto']
       }
     },
   },

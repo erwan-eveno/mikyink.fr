@@ -8,6 +8,7 @@ import {ScrollToPlugin} from "gsap/dist/ScrollToPlugin"
 import Services from "./components/Services";
 import Artbook from "./components/Artbook";
 import Footer from "./components/Footer"
+import Loader from "./components/loader";
 
 function App() {
     let cancelScrollBtns = false
@@ -102,6 +103,7 @@ function App() {
 
     return (
         <div onMouseMove={moveCursor} className="select-none">
+            <Loader />
             <div id="cursor" className="fixed rounded-[30px] block w-[60px] h-[60px] border-white border-[1px] z-[100] pointer-events-none"/>
             <Navbar enter={smallHover} leave={smallLeave} sectionSwipe={sectionSwipe} />
             <div className="absolute left-0 md:left-[100px] md:top-0 overflow-hidden centerCalc">

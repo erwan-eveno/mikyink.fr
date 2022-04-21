@@ -1,5 +1,3 @@
-import {gsap} from "gsap/dist/gsap";
-
 export default function HeroNavbar (props){
     const links = ['services', 'artbook', 'contact']
 

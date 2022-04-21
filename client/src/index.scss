@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap&family=Josefin+Sans:wght@300;400&display=swap&family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400&display=swap&family=Josefin+Sans:wght@300;400&display=swap&family=Nunito&&family=Roboto:wght@900');
 
 $primary: #0A0E11;
 $primaryGradient: #131619;
@@ -12,8 +12,51 @@ body{
   cursor:none;
 }
 
+* {
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 a {
   cursor:none;
+}
+
+.loaderh1 {
+  position: relative;
+  color: #6f7173;
+
+  &::before {
+    content: attr(data-text);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 100%;
+
+    color: #FAF9F5;
+    -webkit-text-stroke: 0 transparent;
+
+    overflow: hidden;
+
+    animation: stroke 6s linear forwards;
+  }
+}
+
+@keyframes stroke {
+  0%,
+  10% {
+    width: 0;
+  }
+
+  70%,
+  100% {
+    width: 100%;
+  }
 }
 
 .flexcenter{
