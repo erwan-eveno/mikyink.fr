@@ -26,9 +26,9 @@ export default function Artbook (props) {
                 </div>
                 <div className="flexcenter h-[15%] sm:hidden w-full h-24">
                     <Link to='/showmore'>
-                        <div className="inline-flex border border-customWhite pl-7 pr-7 pt-3 pb-3" onMouseEnter={props.enterHover} onMouseLeave={props.leaveHover}>
+                        <div className="inline-flex border border-customWhite px-7 py-3" onMouseEnter={props.enterHover} onMouseLeave={props.leaveHover}>
                             <img src="eye.png" className="self-center w-auto h-[17px]" alt=""/>
-                            <h2 className="ml-3 text-customWhite text-[20px] font-josefin">Voir plus</h2>
+                            <h2 className="ml-3 text-customWhite text-[18px] font-josefin whitespace-nowrap">Voir plus</h2>
                         </div>
                     </Link>
                 </div>

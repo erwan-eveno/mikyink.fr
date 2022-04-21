@@ -1,6 +1,3 @@
-import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 export default function Navbar (props){
     return (
         <div onMouseEnter={props.enter} onMouseLeave={props.leave}>
@@ -26,10 +23,10 @@ export default function Navbar (props){
                 </div>
                 <div className="absolute bottom-[7%] h-[15%] lg:h-[10%] flex flex-col justify-between">
                     <a href="https://www.facebook.com/Mikyink.tatouage/" target="_blank" className="flexcenter">
-                        <FontAwesomeIcon icon={faFacebookF} className="text-white text-[30px]" />
+                        <img src="fb.png" alt="facebook" className="h-8" />
                     </a>
                     <a href="https://www.instagram.com/miky_ink_/" target="_blank" className="flexcenter">
-                        <FontAwesomeIcon icon={faInstagram} className="text-white text-[30px]" />
+                        <img src="insta.png" alt="instagram" className="h-8" />
                     </a>
                 </div>
             </div>

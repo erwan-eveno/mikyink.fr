@@ -1,8 +1,4 @@
 import {gsap} from "gsap/dist/gsap";
-import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons'
-import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {Link} from "react-router-dom";
 import {useEffect} from "react";
 
@@ -71,7 +67,7 @@ export default function Mentions (){
             <div className="flexcenter">
                 <div className="h-[100px] w-[80%] mt-12 border-customWhite border border-2 flex justify-between">
                     <Link to="/" className="w-1/5 h-full border-r-customWhite border-r-2 text-customWhite flexcenter text-xl font-josefin" onMouseEnter={cursorHover} onMouseLeave={leaveHover}>
-                        <FontAwesomeIcon icon={faArrowLeftLong} />
+                        <img src="arrowLeft.png" alt="retour" className="w-7" />
                         <span className="ml-3">Retour</span>
                     </Link>
                     <div className="flex items-center">
@@ -80,12 +76,14 @@ export default function Mentions (){
                         </Link>
                     </div>
                     <div className="w-1/5 h-full border-l-customWhite border-l-2 flexcenter" onMouseEnter={smallHover} onMouseLeave={smallLeave}>
-                        <a href="https://www.facebook.com/Mikyink.tatouage/" target="_blank">
-                            <FontAwesomeIcon icon={faFacebookF} className="text-white text-[30px]" />
-                        </a>
-                        <a href="https://www.instagram.com/miky_ink_/" target="_blank">
-                            <FontAwesomeIcon icon={faInstagram} className="text-white text-[30px] ml-8" />
-                        </a>
+                        <div className="w-1/2 flex justify-around">
+                            <a href="https://www.facebook.com/Mikyink.tatouage/" target="_blank">
+                                <img src="fb.png" alt="facebook" className="h-8" />
+                            </a>
+                            <a href="https://www.instagram.com/miky_ink_/" target="_blank">
+                                <img src="insta.png" alt="instagram" className="h-8" />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -96,7 +94,7 @@ export default function Mentions (){
             <div className="w-[70%] ml-[15%] mt-14 text-customWhite pb-32">
                 <h2 className="font-josefin text-xl font-medium">Edition du site internet</h2>
                 <br /><br />
-                Le site Mikyink.fr (ci-après « le Site »), accessible à l’adresse <a href="https://mikyink.fr" target="_blank" className="text-blue-400" onMouseEnter={smallHover} onMouseLeave={smallLeave}>https://mikyink.fr</a> est édité par la société Mikyink (ci-après « l’Editeur »), Entreprise individuelle, dont le siège social est situé au 1 square pierre magnol, 81580 Soual (06 37 36 84 95, hello@mikyink.fr).
+                Le site Mikyink.fr (ci-après « le Site »), accessible à l’adresse <a href="https://mikyink.fr" target="_blank" className="text-blue-400" onMouseEnter={smallHover} onMouseLeave={smallLeave}>https://mikyink.fr</a> est édité par la société Mikyink (ci-après « l’Editeur »), Entreprise individuelle, dont le siège social est situé au 1 square pierre magnol, 81580 Soual (06 37 36 84 95, contact@mikyink.fr).
                 <br /><br />
                 <br /><br />
 

@@ -1,5 +1,3 @@
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faFacebookF, faInstagram} from "@fortawesome/free-brands-svg-icons";
 import { useState} from "react";
 import {gsap} from "gsap/dist/gsap"
 
@@ -57,10 +55,10 @@ export default function HeroMobile () {
                 </div>
                 <div className="absolute bottom-10 flex w-[20%] justify-between">
                     <a href="https://www.facebook.com/Mikyink.tatouage/" target="_blank" className="flexcenter">
-                        <FontAwesomeIcon icon={faFacebookF} className="text-white text-[30px]" />
+                        <img src="fb.png" alt="facebook" className="h-8" />
                     </a>
                     <a href="https://www.instagram.com/miky_ink_/" target="_blank" className="flexcenter">
-                        <FontAwesomeIcon icon={faInstagram} className="text-white text-[30px]" />
+                        <img src="insta.png" alt="instagram" className="h-8" />
                     </a>
                 </div>
             </div>
